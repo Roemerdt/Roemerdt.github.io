@@ -1,0 +1,277 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0; }
+
+#navigation {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: initial;
+  flex-direction: initial;
+  position: fixed;
+  z-index: 2;
+  flex-wrap: wrap; }
+  #navigation a {
+    text-decoration: none; }
+    #navigation a #title {
+      width: 150px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: initial; }
+      #navigation a #title img {
+        width: 100%;
+        height: auto; }
+  #navigation #links {
+    width: 700px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: initial; }
+    @media screen and (max-width: 980px) {
+      #navigation #links {
+        display: none; } }
+    #navigation #links a {
+      text-decoration: none; }
+      #navigation #links a .nav_link {
+        width: auto;
+        height: 50%;
+        display: flex;
+        justify-content: initial;
+        align-items: center;
+        flex-direction: initial;
+        cursor: pointer; }
+        #navigation #links a .nav_link span {
+          font-size: 0.8em;
+          color: #fd8045;
+          font-weight: auto; }
+        #navigation #links a .nav_link:hover {
+          box-sizing: border-box;
+          border-bottom: 3px solid #fd8045; }
+  #navigation #burger {
+    width: 60px;
+    height: 60px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: initial; }
+    #navigation #burger #burger_toggle {
+      width: 30px;
+      height: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      cursor: pointer; }
+      #navigation #burger #burger_toggle .burger_line {
+        width: 30px;
+        height: 2px;
+        background-color: #fd8045; }
+    @media screen and (max-width: 980px) {
+      #navigation #burger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: initial; } }
+  #navigation #shopping_cart {
+    width: 60px;
+    height: 60px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: initial; }
+    #navigation #shopping_cart i {
+      font-size: 1.5em;
+      color: #fd8045;
+      font-weight: auto; }
+    @media screen and (max-width: 980px) {
+      #navigation #shopping_cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: initial; } }
+  #navigation #dropdown {
+    display: none;
+    width: 100%;
+    padding: 0px 15px; }
+    #navigation #dropdown a {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      justify-content: initial;
+      align-items: center;
+      flex-direction: initial;
+      border-bottom: 1px solid #fd8045; }
+      #navigation #dropdown a:last-child {
+        border: none; }
+      #navigation #dropdown a #dropdown_nav_link {
+        width: 100%;
+        height: auto; }
+        #navigation #dropdown a #dropdown_nav_link span {
+          font-size: 1em;
+          color: #fd8045;
+          font-weight: auto; }
+    @media screen and (max-width: 980px) {
+      #navigation #dropdown {
+        display: none; } }
+
+#main-content {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: initial;
+  align-items: center;
+  flex-direction: column; }
+  @media screen and (max-width: 980px) {
+    #main-content {
+      padding-top: 60px; } }
+  #main-content #header-image {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: initial;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://i.imgur.com/CjZhv9J.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: repeat; }
+    @media screen and (max-width: 640px) {
+      #main-content #header-image {
+        height: 300px; } }
+    #main-content #header-image span {
+      font-size: 3.7em;
+      color: #fff;
+      font-weight: auto; }
+      @media screen and (max-width: 640px) {
+        #main-content #header-image span {
+          font-size: 2.5em; } }
+      @media screen and (max-width: 430px) {
+        #main-content #header-image span {
+          font-size: 1.8em; } }
+    @media screen and (max-width: 640px) {
+      #main-content #header-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://i.imgur.com/Ua4L4Tm.jpg");
+        background-position: center center;
+        background-size: 50%;
+        background-repeat: repeat; } }
+  #main-content .main-images {
+    width: 100%;
+    height: auto; }
+    #main-content .main-images #main-image-sinatra {
+      width: 100%;
+      height: 550px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: initial;
+      background: linear-gradient(transparent, transparent), url("https://i.imgur.com/kDYvZme.jpg");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: repeat;
+      cursor: pointer; }
+      @media screen and (max-width: 640px) {
+        #main-content .main-images #main-image-sinatra {
+          height: 400px; } }
+      @media screen and (max-width: 430px) {
+        #main-content .main-images #main-image-sinatra {
+          height: 300px; } }
+      #main-content .main-images #main-image-sinatra span {
+        font-size: 5em;
+        color: #000;
+        font-weight: 700; }
+        @media screen and (max-width: 980px) {
+          #main-content .main-images #main-image-sinatra span {
+            font-size: 4em; } }
+        @media screen and (max-width: 640px) {
+          #main-content .main-images #main-image-sinatra span {
+            font-size: 2.8em; } }
+    #main-content .main-images #main-image-obama {
+      width: 100%;
+      height: 550px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: initial;
+      background: linear-gradient(transparent, transparent), url("https://i.imgur.com/TqB4mR8.jpg");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: repeat;
+      cursor: pointer; }
+      @media screen and (max-width: 640px) {
+        #main-content .main-images #main-image-obama {
+          height: 400px; } }
+      @media screen and (max-width: 430px) {
+        #main-content .main-images #main-image-obama {
+          height: 300px; } }
+      #main-content .main-images #main-image-obama span {
+        font-size: 5em;
+        color: #fff;
+        font-weight: 700; }
+        @media screen and (max-width: 980px) {
+          #main-content .main-images #main-image-obama span {
+            font-size: 4em; } }
+        @media screen and (max-width: 640px) {
+          #main-content .main-images #main-image-obama span {
+            font-size: 2.8em; } }
+    #main-content .main-images #main-image-warhol {
+      width: 100%;
+      height: 550px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: initial;
+      background: linear-gradient(transparent, transparent), url("https://i.imgur.com/s9BV040.jpg");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: repeat;
+      cursor: pointer; }
+      @media screen and (max-width: 640px) {
+        #main-content .main-images #main-image-warhol {
+          height: 400px; } }
+      @media screen and (max-width: 430px) {
+        #main-content .main-images #main-image-warhol {
+          height: 300px; } }
+      #main-content .main-images #main-image-warhol span {
+        font-size: 5em;
+        color: #000;
+        font-weight: 700; }
+        @media screen and (max-width: 980px) {
+          #main-content .main-images #main-image-warhol span {
+            font-size: 4em; } }
+        @media screen and (max-width: 640px) {
+          #main-content .main-images #main-image-warhol span {
+            font-size: 2.8em; } }
+    #main-content .main-images #main-image-eberhard {
+      width: 100%;
+      height: 550px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: initial;
+      background: linear-gradient(transparent, transparent), url("https://i.imgur.com/ElsjtiO.jpg");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: repeat;
+      cursor: pointer; }
+      @media screen and (max-width: 640px) {
+        #main-content .main-images #main-image-eberhard {
+          height: 400px; } }
+      @media screen and (max-width: 430px) {
+        #main-content .main-images #main-image-eberhard {
+          height: 300px; } }
+      #main-content .main-images #main-image-eberhard span {
+        font-size: 5em;
+        color: #fff;
+        font-weight: 700; }
+        @media screen and (max-width: 980px) {
+          #main-content .main-images #main-image-eberhard span {
+            font-size: 4em; } }
+        @media screen and (max-width: 640px) {
+          #main-content .main-images #main-image-eberhard span {
+            font-size: 2.8em; } }
+
+/*# sourceMappingURL=main.css.map */
