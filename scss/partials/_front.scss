@@ -1,0 +1,44 @@
+#main-content {
+	@include dimensions(100%, auto);
+	@include flex(flex, initial, center, column);
+	@include media-query($m-breakpoint, padding-top, 60px);
+
+	#header-image {
+		@include dimensions(100%, 500px);
+		@include flex(flex, center, center);
+		@include dark-background-image("https://i.imgur.com/CjZhv9J.jpg", 0.2, center center, cover);
+		@include media-query($s-breakpoint, height, 300px);
+
+		span {
+			@include text(3.7em, #fff);
+			@include media-query($s-breakpoint, font-size, 2.5em);
+			@include media-query($xs-breakpoint, font-size, 1.8em);
+		}
+
+		@media screen and (max-width: $s-breakpoint) {
+			& {
+				@include dark-background-image("https://i.imgur.com/Ua4L4Tm.jpg", 0.2, center center, 50%);
+			}
+		}
+	}
+
+	.main-images {
+		@include dimensions(100%, auto);
+		
+		#main-image-sinatra{
+			@include main-image("https://i.imgur.com/kDYvZme.jpg", #000);
+		}
+
+		#main-image-obama{
+			@include main-image("https://i.imgur.com/TqB4mR8.jpg", #fff);
+		}
+
+		#main-image-warhol{
+			@include main-image("https://i.imgur.com/s9BV040.jpg", #000);
+		}
+
+		#main-image-eberhard{
+			@include main-image("https://i.imgur.com/ElsjtiO.jpg", #fff);
+		}
+	}
+}
