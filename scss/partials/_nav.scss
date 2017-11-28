@@ -1,16 +1,26 @@
 #navigation {
-	@include dimensions(100%, 60px);
+	@include dimensions(100%, 80px);
 	@include flex(flex, space-between);
+	@include media-query($m-breakpoint, height, 60px);
+	@include media-query($s-breakpoint, background-color, #fff);
 	position: fixed;
 	z-index: 2;
 	flex-wrap: wrap;
+	transition: background-color 0.25s ease-out;
+
+	&:hover {
+		background-color: #fff;
+	}
 
 	a {
 		text-decoration: none;
 
 		#title {
-			@include dimensions(150px, 100%);
+			@include dimensions(130px, 100%);
 			@include flex(flex, center, center);
+			@include media-query($m-breakpoint, margin-left, 0);
+			@include media-query($m-breakpoint, width, 100px);
+			margin-left: 10px;
 
 			img {
 				@include dimensions(100%);
@@ -34,7 +44,7 @@
 				cursor: pointer;
 
 				span {
-					@include text(0.8em, $main-orange);
+					@include text(0.85em, #222);
 				}
 
 				&:hover {
@@ -56,7 +66,7 @@
 
 			.burger_line {
 				@include dimensions(30px, 2px);
-				background-color: $main-orange;
+				background-color: #000;
 			}
 		}
 
@@ -68,11 +78,11 @@
 	}
 
 	#shopping_cart {
-		@include dimensions(66px, 60px);
+		@include dimensions(60px, 60px);
 		@include flex(none, center, center);
 
 		i {
-			@include text(1.5em, $main-orange);
+			@include text(1.5em, #000);
 		}
 
 		@media screen and (max-width: $m-breakpoint) {
@@ -90,17 +100,17 @@
 		a {
 			@include dimensions(100%, 40px);
 			@include flex(flex, initial, center);
-			border-bottom: 1px solid $main-orange;
+			border-bottom: 1px solid #222;
 
 			&:last-child {
-				border: none;
+				margin-bottom: 25px;
 			}
 
 			#dropdown_nav_link {
 				@include dimensions(100%, auto);
 
 				span {
-					@include text(0.8em, $main-orange);
+					@include text(0.8em, #222);
 				}
 			}
 		}

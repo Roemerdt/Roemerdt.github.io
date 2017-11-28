@@ -11,7 +11,12 @@ body {
 	padding: 0;
 }
 
+input {
+	border-radius: 0;
+}
+
 @import 'partials/nav';
 @import 'partials/front';
-@import 'partials/product-grid';
+@import 'partials/person';
+@import 'partials/product';
 @import 'partials/footer';
