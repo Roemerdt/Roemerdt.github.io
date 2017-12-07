@@ -3,11 +3,33 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Navigation</title>
+	<title>SIGNED</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 	<link rel="stylesheet" href="./css/mainprefixed.css">
 </head>
 <body>
+	<div id="shopping_cart_overlay" aria-hidden="true">
+		<div id="shopping_cart_spacer">
+			<div id="shopping_cart_card">
+				<div id="shopping_cart_close">
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</div>
+				<div id="shopping_cart_container">
+					<div id="shopping_cart_content">
+						<h1>Shopping Cart</h1>
+						<ul>
+							<li>
+								<div>Product</div>
+							</li>
+							<li>
+								<div>Product</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<nav id="navigation">
 		<div id="burger">
 			<div id="burger_toggle">
@@ -91,7 +113,7 @@
 			<div id="product_info_container">
 				<div id="product_info_spacer">
 					<div id="product_name_price">
-						<h1>Basic Sinatra Tee</h1>
+						<h1>Sinatra T-Shirt</h1>
 						<span>&euro;59,99</span>
 					</div>
 					<div id="product_size">
@@ -134,43 +156,35 @@
 
 
 	<footer id="footer">
-		<div id="newsletter">
-			<p>Meld je aan voor onze nieuwsbrief:</p>
-			<div id="newsletter_container">
-				<input type="text" placeholder="E-mail">
-				<a href="#">Verstuur</a>
+		<div id="footer_upper">
+			<div id="footer_link">
+				<ul id="footer_links">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Stores</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Shipping &amp; Charges</a></li>
+					<li><a href="#">Returns</a></li>
+					<li><a href="#">FAQ</a></li>
+				</ul>
+			</div>
+			<div id="footer_social">
+				<ul id="footer_socials">
+					<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+				</ul>
 			</div>
 		</div>
-		<div id="columns">
-			<div class="column" id="col1">
-				<h5>KLANTENSERVICE</h5>
-				<a href="#">Over ons</a>
-				<a href="#">Algemene voorwaarden</a>
-				<a href="#">Disclaimer</a>
-				<a href="#">Privacy Policy</a>
-				<a href="#">Betaalmethoden</a>
-				<a href="#">Verzenden & retourneren</a>
-				<a href="#">klantenservice</a>
-				<a href="#">Sitemap</a>
+		<div id="footer_lower">
+			<div id="footer_copyright">
+				<span>&copy; Signed 2017, All Rights Reserved</span>
 			</div>
-			<div class="column" id="col2">
-				<h5>PRODUCTEN</h5>
-				<a href="#">Alle producten</a>
-				<a href="#">Nieuwe producten</a>
-				<a href="#">Aanbiedingen</a>
-				<a href="#">Tags</a>
-			</div>
-			<div class="column" id="col3">
-				<h5>SIGNED</h5>
-				<p>Collection of embroidered signatures from influential people</p>
-				<div class="phone-contact">
-					<i class="fa fa-phone" aria-hidden="true"></i>
-					<p>31631960875</p>
-				</div>
-				<div class="email-contact">
-					<i class="fa fa-envelope" aria-hidden="true"></i>
-					<a href="mailto:signedclothes@gmail.com">signedclothes@gmail.com</a>
-				</div>
+			<div id="footer_fine">
+				<ul id="footer_fines">
+					<li><a href="#">Terms</a></li>
+					<li><a href="#">Imprint</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+				</ul>
 			</div>
 		</div>
 	</footer>

@@ -2,13 +2,16 @@
 	@include dimensions(100%, 80px);
 	@include flex(flex, space-between);
 	@include media-query($m-breakpoint, height, 60px);
-	@include media-query($s-breakpoint, background-color, #fff);
+	// @include media-query($s-breakpoint, background-color, #fff);
+	// @include media-query($s-breakpoint, box-shadow, 0 1px 3px 0 rgba(0, 0, 0, 0.1));
 	position: fixed;
 	z-index: 2;
 	flex-wrap: wrap;
 	transition: background-color 0.25s ease-out;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+	background-color: #fff;
 
-	&:hover {
+	body.hasHover &:hover {
 		background-color: #fff;
 	}
 
@@ -23,7 +26,9 @@
 			margin-left: 10px;
 
 			img {
+				display: block;
 				@include dimensions(100%);
+				// @include media-query($m-breakpoint, padding-top, 8px);
 			}
 		}
 	}
@@ -47,9 +52,9 @@
 					@include text(0.85em, #222);
 				}
 
-				&:hover {
+				body.hasHover &:hover {
 					box-sizing: border-box;
-					border-bottom: 3px solid $main-orange;
+					border-bottom: 3px solid #222;
 				}
 			}
 		}
@@ -78,29 +83,43 @@
 	}
 
 	#shopping_cart {
-		@include dimensions(60px, 60px);
-		@include flex(none, center, center);
+		@include dimensions(80px, 80px);
+		@include flex(flex, center, center);
 
 		i {
 			@include text(1.5em, #000);
+			cursor: pointer;
 		}
 
 		@media screen and (max-width: $m-breakpoint) {
 			& {
-				@include flex(flex, center, center);
+				@include dimensions(60px, 60px);
 			}
 		}
 	}
 
 	#dropdown {
-		display: none;
 		width: 100%;
-		padding: 0px 15px;
+		max-height: 0;
+		overflow: hidden;
+		padding: 0px 20px;
+		transition: max-height 0.15s ease-out;
+		background-color: #fff;
+
+		&.active {
+			max-height: 500px;
+			transition: max-height 0.25s ease-in;
+		}
 
 		a {
-			@include dimensions(100%, 40px);
+			@include dimensions(100%, 30px);
 			@include flex(flex, initial, center);
 			border-bottom: 1px solid #222;
+			margin-bottom: 20px;
+
+			&:first-child {
+				margin-top: 15px;
+			}
 
 			&:last-child {
 				margin-bottom: 25px;
@@ -115,6 +134,6 @@
 			}
 		}
 
-		@include media-query($m-breakpoint, display, none);
+		// @include media-query($m-breakpoint, display, none);
 	}
 }

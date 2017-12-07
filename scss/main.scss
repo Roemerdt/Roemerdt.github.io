@@ -1,9 +1,13 @@
 @import 'modules/mixins';
 @import 'modules/vars';
 
-body {
+html, body {
 	font-family: 'Roboto', sans-serif;
 	margin: 0;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
 }
 
 * {
@@ -15,8 +19,14 @@ input {
 	border-radius: 0;
 }
 
+ol, ul {
+	list-style-type: none;
+}
+
 @import 'partials/nav';
 @import 'partials/front';
 @import 'partials/person';
 @import 'partials/product';
 @import 'partials/footer';
+@import 'partials/shopping-cart-overlay';
+@import 'partials/slider';

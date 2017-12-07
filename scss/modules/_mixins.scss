@@ -39,9 +39,14 @@
 	@include media-query($xs-breakpoint, height, 300px);
 	cursor: pointer;
 
-	span {
-		@include text(5em, $color, 700);
-		@include media-query($m-breakpoint, font-size, 4em);
-		@include media-query($s-breakpoint, font-size, 2.8em);
+	div {
+		background-color: invert($color);
+		padding: 10px 20px;
+
+		span {
+			@include text(5em, $color, 700);
+			@include media-query($m-breakpoint, font-size, 4em);
+			@include media-query($s-breakpoint, font-size, 2.8em);
+		}
 	}
 }

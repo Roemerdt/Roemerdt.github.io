@@ -1,102 +1,149 @@
 #footer {
-	@include dimensions(100%, auto);
-	@include flex(flex, initial, initial, column);
-	background-color: #333;
+	width: 100%;
+	background-color: #000;
+	padding: 20px 40px;
+	box-sizing: border-box;
 
-	#newsletter {
-		@include dimensions(100%, 80px);
-		@include flex(flex, initial, center);
-		@include media-query($s-breakpoint, height, 100px);
-		@include media-query($s-breakpoint, flex-direction, column);
-		@include media-query($s-breakpoint, justify-content, center);
-		@include media-query($s-breakpoint, padding, 0);
-		background-color: #222;
-		padding: 0px 50px;
-		box-sizing: border-box;
+	#footer_upper {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		@include media-query(750px, flex-direction, column);
 
-		#newsletter_container {
-			@include flex(flex);
+		#footer_link {
+			
+			#footer_links {
+				display: flex;
+				@include media-query(750px, flex-direction, column);
+				@include media-query(750px, padding, 20px 0px);
 
-			input[type='text'] {
-				@include dimensions(190px, 30px);
-				margin-right: 10px;
-				padding: 0px 5px;
-				border: 0;
-				outline: 0;
-				font-size: 0.9em;
-			}
+				li {
+					padding-right: 20px;
+					@include media-query(750px, height, 40px);
+					
+					a {
+						display: block;
+						position: relative;
+						color: #fff;
+						font-size: 0.8em;
+						text-decoration: none;
+						transition: all 0.2s ease-in-out;
+						@include media-query(750px,	width, inherit);
+						@include media-query(750px,	height, inherit);
+						@include media-query(750px,	font-size, 0.9em);
+						@include media-query(750px,	padding-top, 12px);
+						@include media-query(750px,	box-sizing, border-box);
 
-			a {
-				@include flex(flex, center, center);
-				@include dimensions(100px, 30px);
-				background-color: $main-orange;
-				color: #fff;
-				text-decoration: none;
+						@media screen and (min-width: 750px) {
+							&::before {
+								position: absolute;
+								opacity: 0;
+								display: block;
+								bottom: -5px;
+								left: 0;
+								width: 100%;
+								height: 1px;
+								background-color: #FFFFFF;
+								content: '';
+								transition: opacity 0.2s ease-in-out;
+							}
+						}
+
+						@media screen and (max-width: 750px) {
+							&::after {
+								position: absolute;
+								right: 0;
+								font-family: "FontAwesome";
+								content: "\f178";
+								transition: opacity 0.2s ease-in-out;
+							}
+
+							body.hasHover &:hover, &:hover::after {
+								color: #7B7B85;
+							}
+						}
+
+						body.hasHover &:hover::before {
+							opacity: 1;
+						}
+					}
+				}
 			}
 		}
 
-		p {
-			@include media-query($s-breakpoint, margin, 0px 0px 10px 0px);
-			color: $main-orange;
-			margin-right: 10px;
+		#footer_social {
+			@include media-query(750px, padding-top, 30px);
+			
+			#footer_socials {
+				display: flex;
+				@include media-query(750px, justify-content, center);
+
+				li {
+					padding-left: 20px;
+
+					&:first-child {
+						@include media-query(750px, padding-left, 0);
+					}
+
+					a > i {
+						color: #fff;
+						font-size: 1.5em;
+						transition: all 0.2s ease-in-out;
+
+						body.hasHover &:hover {
+							color: #7B7B85;
+						}
+					}
+				}
+			}
 		}
 	}
 
-	#columns {
-		@include flex(flex, space-around);
-		@include media-query($m-breakpoint, flex-direction, column);
-		padding: 30px 50px 20px 50px;
-		color: $main-orange;
-		flex-wrap: wrap;
+	#footer_lower {
+		width: 100%;
+		justify-content: space-between;
+		display: flex;
+		padding-top: 20px;
+		@include media-query(750px, flex-direction, column);
 
-		.column {
-			@include flex(flex, initial, initial, column);
-			@include media-query($m-breakpoint, padding-bottom, 30px);
-			max-width: 300px;
+		#footer_copyright {
+			@include media-query(750px, display, flex);
+			@include media-query(750px, justify-content, center);
+			@include media-query(750px,	padding-top, 5px);
 
-			h5 {
-				margin-bottom: 15px;
-				font-size: 1.0em;
+			span {
+				color: #7B7B85;
+				font-size: 0.8em;
 			}
+		}
 
-			a, p {
-				@include text(0.9em, $main-orange);
-				margin-bottom: 15px;
-				text-decoration: none;
-			}
+		#footer_fine {
+			@include media-query(750px, display, flex);
+			@include media-query(750px, justify-content, center);
+			@include media-query(750px, padding, 20px 0px);
 
-			.phone-contact {
+			#footer_fines {
 				display: flex;
 
-				p {
-					margin: 0px 0px 15px 18px;
-				}
+				li {
+					padding-left: 20px;
 
-				i {
-					color: $main-orange;
-				}
-			}
+					&:first-child {
+						@include media-query(750px, padding-left, 0);
+					}
 
-			.email-contact {
-				a {
-					margin-left: 10px;
-				}
+					a {
+						color: #7B7B85;
+						font-size: 0.8em;
+						text-decoration: none;
+						transition: all 0.2s ease-in-out;
 
-				i {
-					color: $main-orange;
+						body.hasHover &:hover {
+							color: #fff;
+						}
+					}
 				}
 			}
 		}
-	}
-
-	#copyright {
-		@include dimensions(100%, auto);
-		@include flex(flex, flex-end);
-		@include text(0.7em, $main-orange);
-		@include media-query($s-breakpoint, margin-top, 25px);
-		@include media-query($s-breakpoint, padding-top, 10px);
-		padding-top: 15px;
-		margin-top: 10px;
-		border-top: 1px solid #000;
 	}
 }

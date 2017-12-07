@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	@include dimensions(100%);
-	padding: 120px 0px 50px 0px;
+	padding: 140px 0px 50px 0px;
 	@include media-query(840px, padding-bottom, 0px);
 	@include media-query(840px, padding-top, 90px);
 	@include media-query(620px, padding-top, 60px);
@@ -136,7 +136,7 @@
 					cursor: pointer;
 					transition: all 150ms ease-in-out;
 
-					&:hover {
+					body.hasHover &:hover {
 						background-color: #000;
 						color: #fff;
 					}
