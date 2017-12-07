@@ -711,6 +711,9 @@ ol, ul {
         @media screen and (max-width: 750px) {
           #footer #footer_upper #footer_link #footer_links li {
             height: 40px; } }
+        @media screen and (max-width: 750px) {
+          #footer #footer_upper #footer_link #footer_links li {
+            padding-right: 0; } }
         #footer #footer_upper #footer_link #footer_links li a {
           display: block;
           position: relative;
