@@ -2,7 +2,7 @@
 	@include dimensions(100%);
 	@include flex(flex, center);
 	@include media-query($m-breakpoint, padding-top, 60px);
-	padding-top: 80px;
+	padding-top: 180px;
 
 	#person_header {
 		@include dimensions(800px);
