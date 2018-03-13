@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SIGNED</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+	<link rel="stylesheet" href="./css/main.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+	<div id="aligner">
+		<div id="slider_container">
+			<div id="slider_main">
+				<ul>
+					<li>
+						<img src="https://i.imgur.com/Mei1HBu.jpg" alt="">
+					</li>
+					<li>
+						<img src="https://i.imgur.com/V2BQnlp.jpg" alt="">
+					</li>
+					<li>
+						<img src="https://i.imgur.com/ZXwKn6q.jpg" alt="">
+					</li>
+				</ul>
+			</div>
+			<div id="slider_controls">
+				<span href="" id="slider_back"></span>
+				<span href="" id="slider_next"></span>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var sliderChildren = $("#slider_container").find("li");
+		var currentSlide = 0;
+
+		sliderChildren[0].style.display = 'list-item';
+		// sliderChildren[0].style.zIndex = 5;
+		for(i = 1; i < sliderChildren.length; i++) {
+			sliderChildren[i].style.display = 'none';
+			// sliderChildren[i].style.zIndex = 0;
+		}
+		function nextSlide() {
+			var queueSlide = currentSlide + 1;
+			if(currentSlide === (sliderChildren.length - 1)) {
+				queueSlide = 0;
+			}
+			sliderChildren.eq(currentSlide).fadeOut(300, function() {
+				$(this).hide();
+			});
+			sliderChildren.eq(queueSlide).fadeIn(300).show().css('display', 'list-item');
+			if(currentSlide === (sliderChildren.length - 1)) {
+				currentSlide = 0;
+			} else {
+				currentSlide += 1;
+			}
+		}
+		function prevSlide() {
+			var queueSlide = currentSlide - 1;
+			if(currentSlide === 0) {
+				queueSlide = sliderChildren.length - 1;
+			}
+			sliderChildren.eq(currentSlide).fadeOut(300, function() {
+				$(this).hide();
+			});
+			sliderChildren.eq(queueSlide).fadeIn(300).show().css('display', 'list-item');
+			if(currentSlide === 0) {
+				currentSlide = sliderChildren.length - 1;
+			} else {
+				currentSlide -= 1;
+			}
+		}
+
+		$("#slider_back").click(prevSlide);
+		$("#slider_next").click(nextSlide);
+	</script>
+</body>
+</html>

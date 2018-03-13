@@ -1,0 +1,32 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		title SIGNED
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+		link(href='https://fonts.googleapis.com/css?family=Roboto:400,500,700', rel='stylesheet')
+		link(rel='stylesheet', href='./css/main.css')
+
+	body
+		include ./partials/_nav.jade
+
+		#main-content
+			.main-images
+				#main-image-sinatra(onclick="location.href='person.html';")
+					div
+						span SINATRA
+				#main-image-obama(onclick="location.href='person.html';")
+					div
+						span OBAMA
+				#main-image-warhol(onclick="location.href='person.html';")
+					div
+						span WARHOL
+				#main-image-eberhard(onclick="location.href='person.html';")
+					div
+						span EBERHARD
+
+		script(src='https://use.fontawesome.com/41747c3e1c.js')
+		script(src='./js/main.js')
+
+		include ./partials/_footer.jade
