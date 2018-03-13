@@ -1,0 +1,110 @@
+#navigation {
+	@include dimensions(100%, 60px);
+	@include flex(flex, space-between);
+	position: fixed;
+	z-index: 2;
+	flex-wrap: wrap;
+
+	a {
+		text-decoration: none;
+
+		#title {
+			@include dimensions(150px, 100%);
+			@include flex(flex, center, center);
+
+			img {
+				@include dimensions(100%);
+			}
+		}
+	}
+
+	#links {
+		@include dimensions(700px, 100%);
+		@include flex(flex, space-around, center);
+
+		@include media-query($m-breakpoint, display, none);
+
+
+		a {
+			text-decoration: none;
+
+			.nav_link {
+				@include dimensions(auto, 50%);
+				@include flex(flex, initial, center);
+				cursor: pointer;
+
+				span {
+					@include text(0.8em, $main-orange);
+				}
+
+				&:hover {
+					box-sizing: border-box;
+					border-bottom: 3px solid $main-orange;
+				}
+			}
+		}
+	}
+
+	#burger {
+		@include dimensions(70px, 60px);
+		@include flex(none, center, center);
+
+		#burger_toggle {
+			@include dimensions(30px, 20px);
+			@include flex(flex, space-between, center, column);
+			cursor: pointer;
+
+			.burger_line {
+				@include dimensions(30px, 2px);
+				background-color: $main-orange;
+			}
+		}
+
+		@media screen and (max-width: $m-breakpoint) {
+			& {
+				@include flex(flex, center, center);
+			}
+		}
+	}
+
+	#shopping_cart {
+		@include dimensions(66px, 60px);
+		@include flex(none, center, center);
+
+		i {
+			@include text(1.5em, $main-orange);
+		}
+
+		@media screen and (max-width: $m-breakpoint) {
+			& {
+				@include flex(flex, center, center);
+			}
+		}
+	}
+
+	#dropdown {
+		display: none;
+		width: 100%;
+		padding: 0px 15px;
+
+		a {
+			@include dimensions(100%, 40px);
+			@include flex(flex, initial, center);
+			border-bottom: 1px solid $main-orange;
+
+			&:last-child {
+				border: none;
+			}
+
+			#dropdown_nav_link {
+				@include dimensions(100%, auto);
+
+				span {
+					@include text(0.8em, $main-orange);
+				}
+			}
+		}
+
+		@include media-query($m-breakpoint, display, none);
+	}
+}

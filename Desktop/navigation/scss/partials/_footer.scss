@@ -1,0 +1,102 @@
+#footer {
+	@include dimensions(100%, auto);
+	@include flex(flex, initial, initial, column);
+	background-color: #333;
+
+	#newsletter {
+		@include dimensions(100%, 80px);
+		@include flex(flex, initial, center);
+		@include media-query($s-breakpoint, height, 100px);
+		@include media-query($s-breakpoint, flex-direction, column);
+		@include media-query($s-breakpoint, justify-content, center);
+		@include media-query($s-breakpoint, padding, 0);
+		background-color: #222;
+		padding: 0px 50px;
+		box-sizing: border-box;
+
+		#newsletter_container {
+			@include flex(flex);
+
+			input[type='text'] {
+				@include dimensions(190px, 30px);
+				margin-right: 10px;
+				padding: 0px 5px;
+				border: 0;
+				outline: 0;
+				font-size: 0.9em;
+			}
+
+			a {
+				@include flex(flex, center, center);
+				@include dimensions(100px, 30px);
+				background-color: $main-orange;
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+
+		p {
+			@include media-query($s-breakpoint, margin, 0px 0px 10px 0px);
+			color: $main-orange;
+			margin-right: 10px;
+		}
+	}
+
+	#columns {
+		@include flex(flex, space-around);
+		@include media-query($m-breakpoint, flex-direction, column);
+		padding: 30px 50px 20px 50px;
+		color: $main-orange;
+		flex-wrap: wrap;
+
+		.column {
+			@include flex(flex, initial, initial, column);
+			@include media-query($m-breakpoint, padding-bottom, 30px);
+			max-width: 300px;
+
+			h5 {
+				margin-bottom: 15px;
+				font-size: 1.0em;
+			}
+
+			a, p {
+				@include text(0.9em, $main-orange);
+				margin-bottom: 15px;
+				text-decoration: none;
+			}
+
+			.phone-contact {
+				display: flex;
+
+				p {
+					margin: 0px 0px 15px 18px;
+				}
+
+				i {
+					color: $main-orange;
+				}
+			}
+
+			.email-contact {
+				a {
+					margin-left: 10px;
+				}
+
+				i {
+					color: $main-orange;
+				}
+			}
+		}
+	}
+
+	#copyright {
+		@include dimensions(100%, auto);
+		@include flex(flex, flex-end);
+		@include text(0.7em, $main-orange);
+		@include media-query($s-breakpoint, margin-top, 25px);
+		@include media-query($s-breakpoint, padding-top, 10px);
+		padding-top: 15px;
+		margin-top: 10px;
+		border-top: 1px solid #000;
+	}
+}
